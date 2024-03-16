@@ -88,14 +88,169 @@ body {
 }
 
 main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .mainProductBlock {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+main .mainProductBlock .mainMenuContainer .mainMenuContainer_menu {
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px #B0B0B0 solid;
+}
+main .mainProductBlock .mainProductBlock__cardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 60px;
+  margin-left: 60px;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card {
+  max-width: 250px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card .card_sale {
+  color: #49751C;
+  font-size: 22px;
+  font-weight: 500;
+  word-wrap: break-word;
+  margin-bottom: 7px;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card .card_sale span {
+  color: #1E1E1E;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card .card_description {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #4B4B4B;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card .card_description span {
+  color: #1E1E1E;
+  font-weight: 500;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #EEEFF1;
+  font-size: 16px;
+  background: #49751C;
+  border-radius: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card a img {
+  max-width: auto;
+  min-width: auto;
+  height: auto;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card a:last-child {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card a:last-child:hover {
+  background: #5e9b21;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card a:first-child {
+  background: none;
+  display: block;
+  font-size: none;
+  border-radius: none;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  padding: none;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .cardContainer_card a:first-child img {
+  max-width: 100%;
+  min-width: 250px;
+  height: auto;
+  margin-right: none;
+  margin-bottom: 10px;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .buttonMore {
+  grid-column: 1/5;
+  background: #E4E4E4;
+  border-radius: 10px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .buttonMore a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  color: #8C8C8C;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .buttonMore:hover {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  background: #cecece;
+}
+main .mainProductBlock .mainProductBlock__cardContainer .buttonMore:hover a {
+  color: #ffffff;
+}
+main .saleTwo {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 40px;
+}
+main .saleTwo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 header {
   background: #49751C;
-  padding: 30px 0;
+  padding: 10px 0;
 }
 header nav {
   display: grid;
@@ -171,11 +326,11 @@ header nav ul li a:hover {
   -webkit-transition: all 200ms;
   transition: all 200ms;
 }
-header .headerNav_searchContainer {
+header .headerNav__searchContainer {
   width: 100%;
   padding: 0 80px;
 }
-header .headerNav_searchContainer input {
+header .headerNav__searchContainer input {
   position: relative;
   width: 100%;
   display: block;
@@ -192,27 +347,27 @@ header .headerNav_searchContainer input {
   font-size: 18px;
   color: #1E1E1E;
 }
-header .headerNav_searchContainer input::-webkit-input-placeholder {
+header .headerNav__searchContainer input::-webkit-input-placeholder {
   color: #B0B0B0;
   font-size: 18px;
 }
-header .headerNav_searchContainer input::-moz-placeholder {
+header .headerNav__searchContainer input::-moz-placeholder {
   color: #B0B0B0;
   font-size: 18px;
 }
-header .headerNav_searchContainer input:-ms-input-placeholder {
+header .headerNav__searchContainer input:-ms-input-placeholder {
   color: #B0B0B0;
   font-size: 18px;
 }
-header .headerNav_searchContainer input::-ms-input-placeholder {
+header .headerNav__searchContainer input::-ms-input-placeholder {
   color: #B0B0B0;
   font-size: 18px;
 }
-header .headerNav_searchContainer input::placeholder {
+header .headerNav__searchContainer input::placeholder {
   color: #B0B0B0;
   font-size: 18px;
 }
-header .headerNav_searchContainer button {
+header .headerNav__searchContainer button {
   position: absolute;
   display: block;
   top: 0;
@@ -234,12 +389,17 @@ header .headerNav_searchContainer button {
 .saleSlider {
   margin-top: 30px;
   border-radius: 15px;
-  width: 100vw;
+  position: relative;
+  margin-bottom: 60px;
+}
+.saleSlider img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Слайдер */
 .slick-slider {
-  position: relative;
   overflow: hidden;
 }
 
@@ -250,11 +410,6 @@ header .headerNav_searchContainer button {
   display: flex;
 }
 
-/* Слайд */
-/* Слайд активный (показывается) */
-/* Слайд основной */
-/* Слайд по центру */
-/* Клонированный слайд */
 /* Стрелка */
 .slick-arrow {
   font-size: 0;
@@ -272,25 +427,24 @@ header .headerNav_searchContainer button {
 /* Стрелка влево */
 .slick-arrow.slick-prev {
   left: 0;
-  top: 8vh;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 /* Стрелка вправо */
 .slick-arrow.slick-next {
   right: 0;
-  top: 8vh;
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+      -ms-transform: translateY(-50%) rotate(-180deg);
+          transform: translateY(-50%) rotate(-180deg);
 }
 
 /* Стрелка не активная */
 .slick-arrow.slick-disabled {
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  opacity: 0.2;
+  opacity: 0.7;
 }
-
-/* Точки (булиты) */
-/* Активная точка */
-/* Элемент точки */
